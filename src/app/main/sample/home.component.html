@@ -1,0 +1,70 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- content-header component -->
+    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+
+    <!-- Table Basic -->
+    <div class="row" id="basic-table">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">User List</h4>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>User_Mail</th>
+                  <th>User_password</th>
+                  <th>Level</th>
+                  <th>Chapter</th>
+                  <th>Mark</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="avatar-group">
+                      <div data-toggle="tooltip" data-popup="tooltip-custom" placement="top" container="body">
+                        James
+                      </div>
+                    </div>
+                  </td>
+                  <td>********</td>
+                  <td>
+                    <span class="font-weight-bold">Rookie</span>
+                  </td>
+                  <td>Chapter1</td>
+
+                  <td><span class="badge badge-pill badge-light-success mr-1">7</span></td>
+                  <td class="overflow-hidden">
+                    <div container="body">
+                      <div>
+                        <a>
+                          <i data-feather="edit-2" class="mr-50"></i>
+                          <span>Edit</span>
+                        </a>
+                        <a> 
+                          <i> | </i>
+                        </a>
+                        <a>
+                          <i data-feather="trash" class="mr-50"></i>
+                          <span>Delete</span>
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Table Basic -->
+
+    <!-- Basic Alerts end -->
+  </div>
+</div>

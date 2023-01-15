@@ -1,0 +1,91 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- content-header component -->
+    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+    <!-- Basic Alerts start -->
+    <section id="sample-page">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Test Problem Create</h4>
+            </div>
+            <div class="card-body pb-1">
+              <div class="submit-form">
+                <div *ngIf="!submitted">
+                  <div class="form-group">
+                    Level
+                    <div class="level">
+                      <select class="form-control" name="1" id="level" required [(ngModel)]="tutorial.level">
+                        <option value="Rookie">Rookie</option>
+                        <option value="Warrior">Warrior</option>
+                        <option value="Slayer">Slayer</option>
+                        <option value="Expert">Expert</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-12">
+                      <label>Select Chapter</label>
+                      <div class="form-group chapter">
+                        <ng-select [items]="selectBasic" bindLabel="name" [loading]="selectBasicLoading" required
+                          [(ngModel)]="tutorial.chapter"> </ng-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Chapter Content</label>
+                    <input type="text" class="form-control " rows="5" id="chapterContent" required [(ngModel)]="tutorial.chapterContent"
+                      name="chapterContent" />
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-12">
+                      <label>Select Quiz</label>
+                      <div class="form-group chapter">
+                        <ng-select [items]="selectQuiz" bindLabel="name" [loading]="selectBasicLoading" required
+                          [(ngModel)]="tutorial.quiz"> </ng-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Question</label>
+                    <input type="text" class="form-control " rows="5" id="question" required [(ngModel)]="tutorial.question"
+                      name="question" />
+                  </div>
+
+                 
+                  <div class="form-group">
+                    <label for="description">Correct Answer</label>
+                    <input class="form-control" id="answer1" required [(ngModel)]="tutorial.answer1" name="answer1" />
+                    <label>False Answer1</label>
+                    <input class="form-control" id="answer2" required [(ngModel)]="tutorial.answer2" name="answer2" />
+                    <label>False Answer2</label>
+                    <input class="form-control" id="answer3" required [(ngModel)]="tutorial.answer3" name="answer3" />
+                    <label for="">False Answer3</label>
+                    <input class="form-control" id="answer4" required [(ngModel)]="tutorial.answer4" name="answer4" />
+                  </div>
+
+                  <button (click)="saveTutorial()"
+                    class="btn btn-primary waves-effect waves-float waves-light">Save</button>
+                </div>
+
+                <div *ngIf="submitted">
+                  <ngb-alert role="alert" class="alert show alert-success fade" ng-reflect-type="primary"
+                    ng-reflect-dismissible="false">
+                    <h4 class="alert-heading">Success</h4>
+
+                  </ngb-alert>
+                  <button rippleeffect="" class="btn btn-outline-success waves-effect"
+                    (click)="newTutorial()">add</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Basic Alerts end -->
+  </div>
+</div>
