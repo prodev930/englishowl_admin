@@ -1,0 +1,58 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <!-- content-header component -->
+    <!-- <app-content-header [contentHeader]="contentHeader"></app-content-header> -->
+
+    <!-- Table Basic -->
+    <div class="row" id="basic-table">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Test Problem List</h4>
+          </div>
+          <div class="card-body">
+          </div>
+          <div class="table-responsive">
+            <table class="table testProblem" >
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>SelectChapter</th>
+                  <th>ChapterContent</th>
+                  <th>SelectQuiz</th>
+                  <th>Question</th>
+                  <th>False Answer</th>
+                  <th>False Answer1</th>
+                  <th>False Answer2</th>
+                  <th>False Answer3</th>
+                  <th>Explanation</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let tutorial of tutorials; let i = index" [class.active]="i == currentIndex"
+                  (click)="setActiveTutorial(tutorial, i)">
+                 <td>{{tutorial.level}}</td>
+                 <td>{{tutorial.chapter.name}}</td>
+                 <td style="width:  100px;">{{tutorial.chapterContent}}</td>
+                 <td>{{tutorial.quiz.name}}</td>
+                 <td>{{tutorial.question}}</td>
+                 <td>{{tutorial.answer1}}</td>
+                 <td>{{tutorial.answer2}}</td>
+                 <td>{{tutorial.answer3}}</td>
+                 <td>{{tutorial.answer4}}</td>
+                 <td>{{tutorial.explanation}}</td>
+                 <td>Delete</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Table Basic -->
+    <!--  -->
+
+  </div>
+</div>

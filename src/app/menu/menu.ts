@@ -16,5 +16,13 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'file',
     url: 'sample'
+  },
+  {
+    id: 'View',
+    title: 'View',
+    translate: 'View',
+    type: 'item',
+    icon: 'file',
+    url: 'view'
   }
 ]

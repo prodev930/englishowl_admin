@@ -11,6 +11,7 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 
 import { SampleComponent } from './sample.component';
 import { HomeComponent } from './home.component';
+import { ViewComponent } from './view.component';
 
 const routes = [
   {
@@ -22,13 +23,18 @@ const routes = [
     path: 'home',
     component: HomeComponent,
     data: { animation: 'home' }
+  },
+  {
+    path: 'view',
+    component: ViewComponent,
+    data: { animation: 'view' }
   }
 ];
 
 @NgModule({
-  declarations: [SampleComponent, HomeComponent],
+  declarations: [SampleComponent, HomeComponent, ViewComponent],
   imports: [RouterModule.forChild(routes), ContentHeaderModule, TranslateModule, CoreCommonModule,NgSelectModule, EditorModule],
-  exports: [SampleComponent, HomeComponent],
+  exports: [SampleComponent, HomeComponent, ViewComponent],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
