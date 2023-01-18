@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { Tutorial } from '../models/tutorial.model';
 
 @Injectable({
@@ -8,25 +9,25 @@ import { Tutorial } from '../models/tutorial.model';
 export class TutorialService {
   private dbPath = '/tutorials';
 
-  tutorialsRef: AngularFirestoreCollection<Tutorial>;
+  tutorialsRef: AngularFireList<Tutorial>;
 
-  constructor(private db: AngularFirestore) {
-    this.tutorialsRef = db.collection(this.dbPath);
+  constructor(private db: AngularFireDatabase) {
+    this.tutorialsRef = db.list(this.dbPath);
   }
 
-  getAll(): AngularFirestoreCollection<Tutorial> {
+  getAll(): AngularFireList<Tutorial> {
     return this.tutorialsRef;
   }
 
   create(tutorial: Tutorial): any {
-    return this.tutorialsRef.add({ ...tutorial });
+    return this.tutorialsRef.push({ ...tutorial });
   }
 
   update(id: string, data: any): Promise<void> {
-    return this.tutorialsRef.doc(id).update(data);
+    return this.tutorialsRef.update(id, data);
   }
 
   delete(id: string): Promise<void> {
-    return this.tutorialsRef.doc(id).delete();
+    return this.tutorialsRef.remove(id);
   }
 }

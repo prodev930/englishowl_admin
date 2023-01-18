@@ -43,12 +43,14 @@ export class SampleComponent implements OnInit {
   constructor(private tutorialService: TutorialService, private dataService: DataService, private storage: AngularFireStorage) { }
 
   saveTutorial(): void {
+    this.tutorial.chapterContent = this.source;
     this.tutorialService.create(this.tutorial).then(() => {
       this.submitted = true;
     });
   }
 
   newTutorial(): void {
+    this.source = '';
     this.submitted = false;
     this.tutorial = new Tutorial();
   }
