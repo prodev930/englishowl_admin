@@ -36,8 +36,9 @@
                   </div>
                   <div class="form-group">
                     <label for="title">Chapter Content</label>
-                    <input type="text" class="form-control " rows="5" id="chapterContent" required [(ngModel)]="tutorial.chapterContent"
-                      name="chapterContent" />
+                    <!-- <input type="text" class="form-control " rows="5" id="chapterContent" required [(ngModel)]="tutorial.chapterContent"
+                      name="chapterContent" /> -->
+                    <editor (onSaveContent)="somefunction()" [init]="config" [(ngModel)]="source"></editor>
                   </div>
                   <div class="row">
                     <div class="col-sm-12 col-12">
