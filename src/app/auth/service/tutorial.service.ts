@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { Tutorial } from '../models/tutorial.model';
 

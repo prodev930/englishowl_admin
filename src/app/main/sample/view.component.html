@@ -13,7 +13,7 @@
           <div class="card-body">
           </div>
           <div class="table-responsive">
-            <table class="table testProblem" >
+            <table class="table testProblem">
               <thead>
                 <tr>
                   <th>Level</th>
@@ -32,17 +32,21 @@
               <tbody>
                 <tr *ngFor="let tutorial of tutorials; let i = index" [class.active]="i == currentIndex"
                   (click)="setActiveTutorial(tutorial, i)">
-                 <td>{{tutorial.level}}</td>
-                 <td>{{tutorial.chapter.name}}</td>
-                 <td style="width:  100px;">{{tutorial.chapterContent}}</td>
-                 <td>{{tutorial.quiz.name}}</td>
-                 <td>{{tutorial.question}}</td>
-                 <td>{{tutorial.answer1}}</td>
-                 <td>{{tutorial.answer2}}</td>
-                 <td>{{tutorial.answer3}}</td>
-                 <td>{{tutorial.answer4}}</td>
-                 <td>{{tutorial.explanation}}</td>
-                 <td>Delete</td>
+                  <td>{{tutorial.level}}</td>
+                  <td>{{tutorial.chapter.name}}</td>
+                  <td style="width:  100px;">{{tutorial.chapterContent}}</td>
+                  <td>{{tutorial.quiz.name}}</td>
+                  <td>{{tutorial.question}}</td>
+                  <td>{{tutorial.answer1}}</td>
+                  <td>{{tutorial.answer2}}</td>
+                  <td>{{tutorial.answer3}}</td>
+                  <td>{{tutorial.answer4}}</td>
+                  <td>{{tutorial.explanation}}</td>
+                  <td>
+                    <span style="cursor: pointer;" (click)="problemUpdate()">Update</span>
+                    <span> | </span>
+                    <span style="cursor: pointer;" (click)="problemDelete()">Delete</span>
+                  </td>
                 </tr>
 
               </tbody>

@@ -17,45 +17,16 @@
                 <tr>
                   <th>User_Mail</th>
                   <th>User_password</th>
-                  <th>Level</th>
-                  <th>Chapter</th>
-                  <th>Mark</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <div class="avatar-group">
-                      <div data-toggle="tooltip" data-popup="tooltip-custom" placement="top" container="body">
-                        James
-                      </div>
-                    </div>
-                  </td>
-                  <td>********</td>
-                  <td>
-                    <span class="font-weight-bold">Rookie</span>
-                  </td>
-                  <td>Chapter1</td>
-
-                  <td><span class="badge badge-pill badge-light-success mr-1">7</span></td>
-                  <td class="overflow-hidden">
-                    <div container="body">
-                      <div>
-                        <a>
-                          <i data-feather="edit-2" class="mr-50"></i>
-                          <span>Edit</span>
-                        </a>
-                        <a> 
-                          <i> | </i>
-                        </a>
-                        <a>
-                          <i data-feather="trash" class="mr-50"></i>
-                          <span>Delete</span>
-                        </a>
-                      </div>
-                    </div>
-                  </td>
+                <tr *ngFor="let user of users; let i = index" [class.active]="i == currentIndex">
+                  <td #email>{{user.email}}</td>
+                  <td>{{user.password}}</td>
+                  <td> <button type="button" class="btn btn-outline-primary" (click)="modalOpenVC()" rippleEffect>
+                      Delete
+                    </button></td>
                 </tr>
               </tbody>
             </table>

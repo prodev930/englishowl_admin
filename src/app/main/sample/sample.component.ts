@@ -21,9 +21,7 @@ export class SampleComponent implements OnInit {
    *
    * @param {CoreTranslationService} _coreTranslationService
    */
-  // constructor(private _coreTranslationService: CoreTranslationService) {
-  //   this._coreTranslationService.translate(en, fr, de, pt)
-  // }
+
   tutorial: Tutorial = new Tutorial();
   submitted = false;
 
@@ -72,10 +70,6 @@ export class SampleComponent implements OnInit {
   source: string = ``;
   config: EditorComponent['init'] = {
     plugins: [
-      // 'advlist autolink charmap print preview anchor',
-      // 'searchreplace visualblocks fullscreen',
-      // 'insertdatetime media table paste help wordcount',
-      // 'lists link code',
       'lists',
       'save',
       'image',
@@ -83,10 +77,6 @@ export class SampleComponent implements OnInit {
       'codesample',
       'fullscreen',
       'export',
-      // 'powerpaste casechange autosave directionality',
-      // 'advcode visualchars mediaembed template advtable',
-      // 'pagebreak nonbreaking checklist tinymcespellchecker a11ychecker',
-      // 'formatpainter permanentpen pageembed linkchecker emoticons'
     ],
     toolbar:
       'undo redo | bold italic | fontsize | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent| charmap | image | save | fullscreen',
@@ -126,12 +116,7 @@ export class SampleComponent implements OnInit {
       return promise;
     },
   };
-    
-  somefunction() {
-    console.log(this.source);
-  }
-  // Lifecycle Hooks
-  // -----------------------------------------------------------------------------------------------------
+  
 
   /**
    * On init

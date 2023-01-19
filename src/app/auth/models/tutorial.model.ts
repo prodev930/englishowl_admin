@@ -12,4 +12,11 @@ export class Tutorial {
   level?: string;
   question?: string;
   quiz?: string;
+  explanation?: string
+}
+
+export class User {
+  id?: string;
+  email?: string;
+  password?: string;
 }
